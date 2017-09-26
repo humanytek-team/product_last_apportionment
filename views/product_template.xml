@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="product_template_product_apportionment_form" model="ir.ui.view">
+            <field name="name">product.template.product.apportionment.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <div name="standard_price_uom" position="after">
+                    <label for="last_apportionment" groups="base.group_user"/>
+                    <div name="last_apportionment" groups="base.group_user">
+                        <field name="last_apportionment" class="oe_inline"/>
+                    </div>
+                    <label for="last_usd_cost" groups="base.group_user"/>
+                    <div name="last_usd_cost" groups="base.group_user">
+                        <field name="last_usd_cost" widget="monetary" options="{'currency_field': 'currency_id'}" class="oe_inline"/>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>
