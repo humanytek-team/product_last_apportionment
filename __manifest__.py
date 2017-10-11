@@ -20,12 +20,13 @@
 
 {
     'name': 'Product Last Apportionment',
-    'version': '1.1',
+    'version': '1.2',
     'author': 'Humanytek',
     'website': 'http://humanytek.com',
     'depends': [
         'product',
         'sale',
+        'pricelist_gain',
     ],
     'data': [
         'views/product_template.xml',
