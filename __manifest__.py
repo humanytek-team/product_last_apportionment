@@ -20,7 +20,7 @@
 
 {
     'name': 'Product Last Apportionment',
-    'version': '1.2',
+    'version': '1.2.1',
     'author': 'Humanytek',
     'website': 'http://humanytek.com',
     'depends': [
