@@ -22,11 +22,11 @@ class SaleOrderLine(models.Model):
                 if line.categ_id == product.categ_id:
                     pricelist_item = line
                     break
-            if pricelist_item:
+            if pricelist_item and pricelist_item.fir:
                 fir = pricelist_item.fir
                 financial_cost = self.last_usd_cost * fir
                 total_cost = self.last_usd_cost + financial_cost
-                return total_cost * (1 - pricelist_item.price_discount)
+                return total_cost / (1 - pricelist_item.gain/100)
             else:
                 return product.with_context(pricelist=self.order_id.pricelist_id.id).price
         price, rule_id = self.order_id.pricelist_id.get_product_price_rule(self.product_id, self.product_uom_qty or 1.0, self.order_id.partner_id)
